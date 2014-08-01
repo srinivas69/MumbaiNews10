@@ -12,7 +12,7 @@ public class Utils {
 
 	private Context context;
 
-	public static String ur = "http://www.google.co.in/search?hl=en&gl=in&tbm=nws&authuser=0&q=mumbai&oq=mumbai&gs_l=news-cc.1.0.43j0l9j43i53.4059.5709.0.8296.6.3.0.3.3.0.215.465.0j2j1.3.0...0.0...1ac.1.Cm8MPV3wsZ4";
+	public static String url = "http://www.google.co.in/search?hl=en&gl=in&tbm=nws&authuser=0&q=mumbai&oq=mumbai&gs_l=news-cc.1.0.43j0l9j43i53.4059.5709.0.8296.6.3.0.3.3.0.215.465.0j2j1.3.0...0.0...1ac.1.Cm8MPV3wsZ4";
 
 	public static final String TAG = Utils.class.getSimpleName();
 
