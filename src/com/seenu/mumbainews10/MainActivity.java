@@ -14,12 +14,16 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.koushikdutta.urlimageviewhelper.UrlImageViewHelper;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -53,6 +57,27 @@ public class MainActivity extends SherlockActivity {
 		lv = (ListView) findViewById(R.id.listView1);
 
 		makeRequestToServer();
+
+		lv.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> adapter, View view, int pos,
+					long id) {
+				// TODO Auto-generated method stub
+
+				String urlArt = (String) adapter.getItemAtPosition(pos);
+				// System.out.println(urlArt);
+
+				/*Intent decInt = new Intent(MainActivity.this,
+						NewsArticleDescriptionActivity.class);
+				decInt.putExtra("ARTICLE_URL", urlArt);
+				startActivity(decInt);*/
+				Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(urlArt));
+				startActivity(browserIntent);
+				
+
+			}
+		});
 	}
 
 	@Override
@@ -158,7 +183,7 @@ public class MainActivity extends SherlockActivity {
 		@Override
 		public int getCount() {
 			// TODO Auto-generated method stub
-			return headlineList.size();
+			return urlsList.size();
 		}
 
 		@Override
